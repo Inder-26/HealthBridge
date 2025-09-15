@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Healthcare Data Integration Platform Design System */
+
+@layer base {
+  :root {
+    /* Core Healthcare Color Palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Medical Blue Primary */
+    --primary: 200 95% 40%;
+    --primary-foreground: 210 20% 99%;
+    --primary-hover: 200 95% 35%;
+    
+    /* Clinical Teal Secondary */
+    --secondary: 180 25% 94%;
+    --secondary-foreground: 180 60% 25%;
+
+    /* Subtle Background */
+    --muted: 210 25% 96%;
+    --muted-foreground: 215 15% 52%;
+
+    /* Interactive Accent */
+    --accent: 195 100% 96%;
+    --accent-foreground: 200 95% 40%;
+
+    /* Medical Status Colors */
+    --medical-vitals: 210 100% 56%;
+    --medical-vitals-bg: 210 100% 97%;
+    --medical-meds: 142 76% 36%;
+    --medical-meds-bg: 142 76% 96%;
+    --medical-labs: 45 93% 47%;
+    --medical-labs-bg: 45 93% 96%;
+    
+    /* Clinical Status */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Interface Elements */
+    --border: 214 15% 91%;
+    --input: 210 20% 96%;
+    --ring: 200 95% 40%;
+
+    /* Layout */
+    --radius: 0.625rem;
+    --sidebar-width: 280px;
+    
+    /* Shadows */
+    --shadow-soft: 0 1px 3px 0 hsl(215 25% 27% / 0.1), 0 1px 2px 0 hsl(215 25% 27% / 0.06);
+    --shadow-medium: 0 4px 6px -1px hsl(215 25% 27% / 0.1), 0 2px 4px -1px hsl(215 25% 27% / 0.06);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(200 95% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(180 25% 90%));
+  }
+
+  .dark {
+    /* Dark mode for healthcare platform */
+    --background: 215 28% 17%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 28% 17%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 200 95% 50%;
+    --primary-foreground: 215 28% 17%;
+    --primary-hover: 200 95% 45%;
+
+    --secondary: 215 25% 25%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 215 25% 25%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 200 95% 20%;
+    --accent-foreground: 200 95% 50%;
+
+    --medical-vitals: 210 100% 60%;
+    --medical-vitals-bg: 210 100% 8%;
+    --medical-meds: 142 76% 45%;
+    --medical-meds-bg: 142 76% 8%;
+    --medical-labs: 45 93% 55%;
+    --medical-labs-bg: 45 93% 8%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 200 95% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Healthcare-specific component styles */
+  .medical-card {
+    @apply bg-card border border-border rounded-lg shadow-soft;
+  }
+
+  .medical-badge-vitals {
+    @apply bg-medical-vitals-bg text-medical-vitals border border-medical-vitals/20;
+  }
+
+  .medical-badge-meds {
+    @apply bg-medical-meds-bg text-medical-meds border border-medical-meds/20;
+  }
+
+  .medical-badge-labs {
+    @apply bg-medical-labs-bg text-medical-labs border border-medical-labs/20;
+  }
+
+  .sidebar-nav {
+    @apply flex flex-col space-y-1;
+  }
+
+  .sidebar-nav-item {
+    @apply flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+  }
+
+  .sidebar-nav-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .sidebar-nav-item:not(.active) {
+    @apply text-muted-foreground hover:bg-accent hover:text-accent-foreground;
+  }
+}
+
