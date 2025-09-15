@@ -79,10 +79,6 @@ This project is built with:
 - Manage doctor and patient registrations.
 ---
 ## Screenshots
-- Login Userinterface  for Patients, Admins, Doctors, labtechenician
-
-![Alt Text](images/healthbridge.jpeg)
-
 - User-Interface for Patients
 
 ![Alt Text](images/d_patient.png)
